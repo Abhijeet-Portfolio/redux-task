@@ -57,13 +57,21 @@ section ul {
 }
 
 section li {
-  width: 50%;
-  padding: 10px 5%;
+  width: 60%;
+  padding: 10px 2.5%;
   margin: 10px 0;
   display: flex;
   justify-content: space-between;
   background-color: #cccccc;
 }
+
+section li div:nth-child(2) {
+  width: 35%;
+  display: flex;
+  justify-content: space-between;
+}
+
+section li button { width: 46%;}
 
 /*=================================
   main styling ends here

@@ -1,17 +1,32 @@
 import { useState } from 'react';
 import { useSelector, useDispatch } from 'react-redux';
-import { detail, remove } from '../actions';
+import { detail, remove, edit } from '../actions';
 import '../assets/css/App.css';
 
 function App() {
-  const [fname, setfname] = useState(null);
-  const [dept, setdept] = useState(null);
+  const [fname, setfname] = useState('');
+  const [dept, setdept] = useState('');
+  const [editMode, seteditMode] = useState(false);
+  const [id, setid] = useState(null);
   const emp = useSelector(state => state.arr);
   const dispatch = useDispatch();
 
   const getData = e => {
     e.preventDefault();
-    dispatch(detail({ fname, dept }));
+    if (editMode) {
+      dispatch(edit({fname,dept},id));
+      seteditMode(false);
+    }
+    else { dispatch(detail({ fname, dept })); }  
+    setfname('');
+    setdept('');
+  }
+
+  const editData = (data,key) => {
+    setid(key);
+    setfname(data.fname);
+    setdept(data.dept);
+    seteditMode(true);
   }
 
   return (
@@ -44,7 +59,10 @@ function App() {
                     <h3>Name: {value.fname}</h3>
                     <h4>Department: {value.dept}</h4>
                   </div>
-                  <button onClick={() => dispatch(remove(key))}>Remove</button>
+                  <div>
+                    <button onClick={() => editData(value,key)}>Edit</button>
+                    <button onClick={() => dispatch(remove(key))}>Remove</button>
+                  </div>
                 </li>
               )
             })}

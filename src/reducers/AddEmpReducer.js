@@ -13,6 +13,16 @@ const AddEmp = (state = initialState, action) => {
             return {
                 arr: state.arr.filter((element,key) => key !== action.payload)
             };
+        case 'EDIT':
+            return {
+                arr: state.arr.map((value,key) => {
+                    if(key === action.ID) {
+                        value.fname = action.payload.fname;
+                        value.dept = action.payload.dept;
+                    }
+                    return value;
+                })
+            }
         default:
             return state
     }
