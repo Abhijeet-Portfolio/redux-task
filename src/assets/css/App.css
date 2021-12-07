@@ -1,0 +1,75 @@
+/*=================================
+  Header styling starts here
+=================================*/
+
+header { 
+  padding: 10px;
+  background-color: #0d083a;
+  color: #f5f5f5;
+  font-size: 22px;
+  text-align: center;
+}
+
+/*=================================
+  Header styling ends here
+=================================*/  
+
+/*=================================
+  main styling starts here
+=================================*/
+
+form {
+  width: 40%;
+  margin: 30px 0 20px;
+}
+
+form div {
+  width: 100%;
+  margin: 15px 0;
+}
+
+form label { display: block;}
+
+form input {
+  box-sizing: border-box;
+  width: 100%;
+  padding: 2px 2%;
+  margin: 5px 0;
+  font-size: 18px;
+  outline: none;
+}
+
+form button {
+  width: 40%;
+  padding: 5px 0;
+  border: 0;
+  background-color: #a50000;
+  color: #f5f5f5;
+  font-size: 16px;
+}
+
+form button:hover { background-color: #750404;}
+
+/*=================================
+  main styling ends here
+=================================*/
+
+/*=================================
+  footer styling starts here
+=================================*/ 
+
+
+
+
+
+
+
+ /*=================================
+  footer styling ends here
+=================================*/ 
+
+/*media query starts*/
+/*media query for 995px starts here*/
+@media only screen and (max-width: 995px) {
+
+}  
