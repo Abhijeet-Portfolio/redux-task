@@ -50,6 +50,21 @@ form button {
 
 form button:hover { background-color: #750404;}
 
+section ul {
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+}
+
+section li {
+  width: 50%;
+  padding: 10px 5%;
+  margin: 10px 0;
+  display: flex;
+  justify-content: space-between;
+  background-color: #cccccc;
+}
+
 /*=================================
   main styling ends here
 =================================*/

@@ -4,3 +4,10 @@ export const detail = value => {
         payload: value
     }
 }
+
+export const remove = value => {
+    return {
+        type: 'REMOVE',
+        payload: value
+    }
+}

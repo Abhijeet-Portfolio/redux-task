@@ -1,8 +1,18 @@
-const AddEmp = (state = [], action) => {
+const initialState = {
+    arr: []
+}
+
+const AddEmp = (state = initialState, action) => {
     switch(action.type) {
         case 'ADD':
-            state.push(action.payload);
-            return state;
+            return {
+                ...state,
+                arr: [...state.arr,action.payload]
+            };
+        case 'REMOVE':            
+            return {
+                arr: state.arr.filter((element,key) => key !== action.payload)
+            };
         default:
             return state
     }
