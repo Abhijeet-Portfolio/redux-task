@@ -14,15 +14,15 @@ function App() {
   const getData = e => {
     e.preventDefault();
     if (editMode) {
-      dispatch(edit({fname,dept},id));
+      dispatch(edit({ fname, dept }, id));
       seteditMode(false);
     }
-    else { dispatch(detail({ fname, dept })); }  
+    else { dispatch(detail({ fname, dept })); }
     setfname('');
     setdept('');
   }
 
-  const editData = (data,key) => {
+  const editData = (data, key) => {
     setid(key);
     setfname(data.fname);
     setdept(data.dept);
@@ -60,7 +60,7 @@ function App() {
                     <h4>Department: {value.dept}</h4>
                   </div>
                   <div>
-                    <button onClick={() => editData(value,key)}>Edit</button>
+                    <button onClick={() => editData(value, key)}>Edit</button>
                     <button onClick={() => dispatch(remove(key))}>Remove</button>
                   </div>
                 </li>
