@@ -3,11 +3,17 @@ import ReactDOM from 'react-dom';
 import './assets/css/index.css';
 import App from './components/App';
 import reportWebVitals from './reportWebVitals';
-import { createStore } from 'redux';
+import { createStore, applyMiddleware } from 'redux';
+import logger from 'redux-logger';
 import { Provider } from 'react-redux';
 import AddEmp from './reducers/AddEmpReducer';
 
-const store = createStore(AddEmp);
+const myLogger = store => next => action => {
+  console.log("Logged Action:  ",action);
+  next(action);
+}
+
+const store = createStore(AddEmp,applyMiddleware(logger));
 
 ReactDOM.render(
   <React.StrictMode>

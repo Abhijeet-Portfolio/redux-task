@@ -20,6 +20,7 @@ function App() {
     else { dispatch(detail({ fname, dept })); }
     setfname('');
     setdept('');
+    console.log(emp);
   }
 
   const editData = (data, key) => {
